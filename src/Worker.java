@@ -1,12 +1,3 @@
-@FunctionalInterface
-interface OnTaskDoneListener {
-    void onDone(String result);
-}
-
-@FunctionalInterface
-interface OnTaskErrorListener {
-    void onError(String error);
-}
 
 public class Worker {
     private OnTaskDoneListener callback;
@@ -21,7 +12,6 @@ public class Worker {
     }
 
     public void start() {
-        // Моделируем выполнение работы
         for (int i = 0; i < 100; i++) {
             if (i == 33) {
                 errorCallback.onError("Task " + i + " ended with an error");
